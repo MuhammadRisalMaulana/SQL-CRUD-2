@@ -2,11 +2,9 @@
 require 'connect_product.php';
 
 try {
-    // SQL untuk memilih semua data dari tabel 'products'
     $sql = "SELECT * FROM products";
     $stmt = $pdo->query($sql);
 
-    // Menampilkan data dalam tabel HTML
     echo "<table border='1'>
             <tr>
                 <th>Name</th>
