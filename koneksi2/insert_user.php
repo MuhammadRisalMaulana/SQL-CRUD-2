@@ -1,20 +1,16 @@
 <?php
 require 'connect_product.php';
 
-$name = $_POST['name'];
-$price = $_POST['price'];
+$username = $_POST['username'];
+$email = $_POST['email'];
 
-try {
-    $sql = "INSERT INTO products (name, price) VALUES (:name, :price)";
+    $sql = "INSERT INTO products (username, email) VALUES (:username, :email)";
     $stmt = $pdo->prepare($sql);
 
-    $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':price', $price);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':email', $email);
 
     $stmt->execute();
 
-    echo "Produk berhasil ditambahkan!";
-} catch (PDOException $e) {
-    echo "Gagal menambahkan produk: " . $e->getMessage();
-}
+    echo "User berhasil ditambahkan!";
 ?>
